@@ -1,0 +1,4 @@
+bagit-txt = "BagIt-Version: " 1*DIGIT "." 1*DIGIT ending
+            "Tag-File-Character-Encoding: " encoding
+encoding         = 1*CHAR
+ending           = CR / LF / CRLF

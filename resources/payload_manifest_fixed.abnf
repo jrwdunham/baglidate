@@ -1,0 +1,19 @@
+payload-manifest = 1*p-m-line
+p-m-line         = checksum 1*WSP filename ending
+checksum         = 1*hex-val
+hex-val          = 1*case-hexdig
+                 [ 1*("." 1*case-hexdig) / ("-" 1*case-hexdig) ]
+case-hexdig      = DIGIT / "A" / "a" / "B" / "b" / "C" / "c" / "D" /
+                 "d" / "E" / "e" / "F" / "f"
+HEXDIG           = DIGIT / "A" / "B" / "C" / "D" / "F"
+filename         = (
+                    "data"
+                    "/"
+                    1*( unreserved / pct-encoded / sub-delims )
+                   )
+unreserved       = ALPHA / DIGIT / "-" / "." / "_" / "~"
+sub-delims       = "!" / "$" / "&#38;" / "'" / "(" / ")" / "*"
+                 / "+" / "," / ";" / "=" / "/"
+pct-encoded      = "%" HEXDIG HEXDIG
+ending           = CR / LF / CRLF
+
