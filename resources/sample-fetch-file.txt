@@ -1,0 +1,3 @@
+https://cdn.loc.gov/master/pnp/highsm/23300/23364a.tif 216951362 data/23364a.tif
+https://cdn.loc.gov/master/pnp/highsm/23300/23364b.tif 216951179 data/23364b.tif
+https://cdn.loc.gov/master/pnp/highsm/23300/23364c.tif 216951368 data/23364c.tif

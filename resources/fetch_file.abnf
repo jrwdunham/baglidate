@@ -1,0 +1,9 @@
+fetch           = url 1*WSP length 1*WSP filename line-terminator
+url             = <absolute-URI, see [RFC3986], Section 4.3>
+length          = DIGIT
+filename        = (
+                  "data"
+                  "/"
+                  *( unreserved / pct-encoded / sub-delims )
+                )
+line-terminator = CR / LF / CRLF

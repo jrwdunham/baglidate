@@ -1,0 +1,12 @@
+metadata-set            = 1*metadata
+metadata                = key ":" WSP value
+key                     = UNICODE-VCHAR *( UNICODE-VCHAR / WSP )
+value                   = value-line *( 1*WSP value-line )
+value-line              = UNICODE-VCHAR *( UNICODE-VCHAR / WSP ) ending
+ending                  = CR / LF / CRLF
+
+;; ``ALPHA / DIGIT`` is not good enough for keys and values because we want to
+;; allow Unicode characters, spaces and punctuation in both labels (keys) and
+;; values. ``UNICODE-VCHAR`` should match any punctuation, any Unicode letter
+;; character, or any digit.
+UNICODE-VCHAR           = ( #'\p{Punct}' / #'\p{L}' / #'\d' )
